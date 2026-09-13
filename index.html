@@ -1,0 +1,1593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  !-- Adds the JPEG as a browser tab favicon -->
+  <link rel="icon" type="image/jpeg" href="assets/shubha-travels-logo.jpeg">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Shubha Travels | Travel • Flights • Support</title>
+
+<meta name="description"
+content="Shubha Travels - Flight booking assistance, travel support and holiday services.">
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f6f8fb;
+    color: #10233f;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    background: rgba(255,255,255,0.94);
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.nav-inner {
+    max-width: 1200px;
+    margin: auto;
+
+    padding: 14px 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.nav-logo {
+    height: 48px;
+    width: auto;
+    object-fit: contain;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-links a {
+    font-weight: 600;
+    color: #173b63;
+    transition: 0.25s;
+}
+
+.nav-links a:hover {
+    color: #e52d2d;
+}
+
+.nav-button {
+    background: #e52d2d;
+    color: white !important;
+    padding: 10px 18px;
+    border-radius: 30px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 720px;
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.25),
+            rgba(0,0,0,0.25)
+        ),
+        url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=2000&q=90")
+        center center / cover no-repeat;
+}
+
+
+/* HERO CONTENT */
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+
+    width: min(1100px, 92%);
+
+    text-align: center;
+
+    color: white;
+
+    padding-top: 80px;
+}
+
+.hero-logo {
+    width: 260px;
+    height: auto;
+
+    margin-bottom: 28px;
+
+    background: white;
+    padding: 12px 18px;
+    border-radius: 18px;
+
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+}
+
+.hero-kicker {
+    display: inline-block;
+
+    background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255,255,255,0.35);
+
+    padding: 8px 17px;
+    border-radius: 30px;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 7vw, 76px);
+    line-height: 1.05;
+
+    margin-bottom: 20px;
+
+    text-shadow: 0 5px 25px rgba(0,0,0,0.25);
+}
+
+.hero p {
+    max-width: 720px;
+    margin: auto;
+
+    font-size: 19px;
+
+    color: rgba(255,255,255,0.95);
+}
+
+
+/* HERO BUTTONS */
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 14px;
+
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 14px 23px;
+
+    border-radius: 40px;
+
+    font-weight: bold;
+
+    transition: 0.25s;
+
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn-primary {
+    background: #e52d2d;
+    color: white;
+
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+
+.btn-light {
+    background: white;
+    color: #163d62;
+}
+
+
+/* =========================
+   GENERAL SECTIONS
+========================= */
+
+section {
+    padding: 90px 20px;
+}
+
+.container {
+    max-width: 1150px;
+    margin: auto;
+}
+
+.section-label {
+    color: #e52d2d;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    font-size: 13px;
+
+    margin-bottom: 10px;
+}
+
+.section-title {
+    font-size: clamp(30px, 5vw, 48px);
+
+    color: #102d4c;
+
+    margin-bottom: 15px;
+}
+
+.section-description {
+    max-width: 700px;
+
+    color: #64748b;
+
+    font-size: 17px;
+}
+
+
+/* =========================
+   SERVICES
+========================= */
+
+.services {
+    background: white;
+}
+
+.service-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+
+    margin-top: 45px;
+}
+
+.service-card {
+    padding: 30px;
+
+    border-radius: 20px;
+
+    background: #f7f9fc;
+
+    border: 1px solid #e8edf3;
+
+    transition: 0.25s;
+}
+
+.service-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 20px 40px rgba(20,50,80,0.1);
+}
+
+.service-icon {
+    width: 55px;
+    height: 55px;
+
+    border-radius: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #eaf2fa;
+
+    font-size: 26px;
+
+    margin-bottom: 18px;
+}
+
+.service-card h3 {
+    margin-bottom: 8px;
+
+    color: #173b63;
+}
+
+.service-card p {
+    color: #718096;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+    background: #f4f7fa;
+}
+
+.about-grid {
+    display: grid;
+
+    grid-template-columns:
+        1.1fr 0.9fr;
+
+    gap: 60px;
+
+    align-items: center;
+}
+
+.about-text p {
+    color: #64748b;
+
+    margin-top: 18px;
+}
+
+.about-box {
+    background: white;
+
+    border-radius: 25px;
+
+    padding: 35px;
+
+    box-shadow:
+        0 20px 50px rgba(20,50,80,0.08);
+}
+
+.about-item {
+    display: flex;
+
+    gap: 15px;
+
+    padding: 16px 0;
+
+    border-bottom: 1px solid #edf0f4;
+}
+
+.about-item:last-child {
+    border-bottom: none;
+}
+
+.about-check {
+    font-size: 20px;
+}
+
+
+/* =========================
+   VERIFICATION / TRUST
+========================= */
+
+.trust {
+    background: white;
+
+    text-align: center;
+}
+
+.trust-description {
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    color: #64748b;
+}
+
+.trust-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 25px;
+
+    margin-top: 45px;
+}
+
+.trust-card {
+    border: 1px solid #e5eaf0;
+
+    border-radius: 22px;
+
+    padding: 25px;
+
+    background: #fbfcfe;
+
+    text-align: left;
+}
+
+.trust-card img {
+    width: 100%;
+    height: 180px;
+
+    object-fit: contain;
+
+    background: white;
+
+    border-radius: 14px;
+
+    margin-bottom: 18px;
+}
+
+.trust-card h3 {
+    color: #163d62;
+
+    margin-bottom: 7px;
+}
+
+.trust-card p {
+    color: #718096;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   REVIEWS
+========================= */
+
+.reviews {
+    background: #f4f7fa;
+}
+
+.review-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+    margin-top: 45px;
+}
+
+.review-card {
+    background: white;
+
+    padding: 28px;
+
+    border-radius: 20px;
+
+    border: 1px solid #e7ecf1;
+
+    box-shadow:
+        0 10px 30px rgba(20,50,80,0.05);
+}
+
+.stars {
+    color: #f5b400;
+
+    letter-spacing: 3px;
+
+    font-size: 18px;
+
+    margin-bottom: 15px;
+}
+
+.review-text {
+    color: #536579;
+
+    font-size: 15px;
+
+    margin-bottom: 22px;
+}
+
+.reviewer {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.reviewer-avatar {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #163d62,
+            #e52d2d
+        );
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: bold;
+}
+
+.reviewer h4 {
+    color: #173b63;
+}
+
+.reviewer span {
+    font-size: 12px;
+
+    color: #8a98a8;
+}
+
+
+/* =========================
+   CONTACT CTA
+========================= */
+
+.contact {
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #102f50,
+            #164f70
+        );
+
+    color: white;
+
+    text-align: center;
+}
+
+.contact::before {
+    content: "";
+
+    position: absolute;
+
+    width: 400px;
+    height: 400px;
+
+    border-radius: 50%;
+
+    border: 70px solid rgba(255,255,255,0.04);
+
+    top: -200px;
+    right: -100px;
+}
+
+.contact-content {
+    position: relative;
+    z-index: 2;
+}
+
+.contact h2 {
+    font-size: clamp(32px,5vw,52px);
+
+    margin-bottom: 15px;
+}
+
+.contact p {
+    max-width: 650px;
+
+    margin: 0 auto 30px;
+
+    color: rgba(255,255,255,0.8);
+}
+
+.contact-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 13px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #091d31;
+
+    color: white;
+
+    padding: 45px 20px 25px;
+}
+
+.footer-inner {
+    max-width: 1150px;
+
+    margin: auto;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+.footer-logo {
+    height: 45px;
+
+    background: white;
+
+    padding: 5px 10px;
+
+    border-radius: 8px;
+}
+
+.footer-text {
+    color: #91a4b8;
+
+    font-size: 13px;
+}
+
+.copyright {
+    text-align: center;
+
+    margin-top: 30px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(255,255,255,0.08);
+
+    color: #71869b;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   FLOATING WHATSAPP
+========================= */
+
+.whatsapp {
+    position: fixed;
+
+    right: 20px;
+    bottom: 20px;
+
+    z-index: 999;
+
+    width: 58px;
+    height: 58px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #25D366;
+
+    color: white;
+
+    font-size: 27px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.25);
+
+    transition: 0.25s;
+}
+
+.whatsapp:hover {
+    transform: scale(1.08);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .service-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .review-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .nav-inner {
+        padding: 10px 15px;
+    }
+
+    .nav-logo {
+        height: 40px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        min-height: 680px;
+    }
+
+    .hero-content {
+        padding-top: 70px;
+    }
+
+    .hero-logo {
+        width: 210px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    section {
+        padding: 70px 17px;
+    }
+
+    .service-grid,
+    .review-grid,
+    .trust-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .trust-card img {
+        height: 150px;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav class="navbar">
+
+    <div class="nav-inner">
+
+        <!--
+        ==================================================
+        LOGO
+        Replace this file:
+        assets/shubha-travels-logo.png
+        ==================================================
+        -->
+
+        <a href="#home">
+
+            <img
+                class="nav-logo"
+                src="assets/shubha-travels-logo.jpeg"
+                alt="Shubha Travels Logo"
+            >
+
+        </a>
+
+
+        <div class="nav-links">
+
+            <a href="#home">Home</a>
+
+            <a href="#services">Services</a>
+
+            <a href="#about">About</a>
+
+            <a href="#reviews">Reviews</a>
+
+            <a href="#contact" class="nav-button">
+                Contact
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <!--
+        ==================================================
+        MAIN LOGO
+
+        Replace:
+        assets/shubha-travels-logo.png
+
+        The old "SHUBHA TRAVELS" heading is NOT used.
+        ==================================================
+        -->
+
+        <img
+            class="hero-logo"
+            src="assets/shubha-travels-logo.jpeg"
+            alt="Shubha Travels"
+        >
+
+
+        <div class="hero-kicker">
+            TRAVEL • FLIGHTS • SUPPORT
+        </div>
+
+
+        <h1>
+            Travel made simple.
+        </h1>
+
+
+        <p>
+            Looking for a flight or travel assistance?
+            Contact SHUBHA TRAVELS directly for availability,
+            fares and booking assistance.
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <!-- CHANGE PHONE NUMBER -->
+            <a
+                class="btn btn-primary"
+                href="tel:+91XXXXXXXXXX"
+            >
+                📞 Call to Book
+            </a>
+
+
+            <!-- CHANGE EMAIL -->
+            <a
+                class="btn btn-light"
+                href="mailto:YOUR_EMAIL@example.com"
+            >
+                ✉️ Email Us
+            </a>
+
+
+            <!-- CHANGE WHATSAPP NUMBER -->
+            <a
+                class="btn btn-light"
+                href="https://wa.me/91XXXXXXXXXX"
+                target="_blank"
+            >
+                💬 WhatsApp
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section class="services" id="services">
+
+    <div class="container">
+
+        <div class="section-label">
+            WHAT WE DO
+        </div>
+
+        <h2 class="section-title">
+            Travel services made easier.
+        </h2>
+
+        <p class="section-description">
+            Get personal assistance for your travel requirements
+            without complicated online booking processes.
+        </p>
+
+
+        <div class="service-grid">
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    ✈️
+                </div>
+
+                <h3>
+                    Flight Assistance
+                </h3>
+
+                <p>
+                    Get help checking flight availability,
+                    fares and booking options.
+                </p>
+
+            </div>
+
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    🌍
+                </div>
+
+                <h3>
+                    Holiday Travel
+                </h3>
+
+                <p>
+                    Assistance with holiday and international
+                    travel arrangements.
+                </p>
+
+            </div>
+
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    🏨
+                </div>
+
+                <h3>
+                    Hotels & Transfers
+                </h3>
+
+                <p>
+                    Get assistance with accommodation and
+                    travel transfers.
+                </p>
+
+            </div>
+
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    📄
+                </div>
+
+                <h3>
+                    Visa Assistance
+                </h3>
+
+                <p>
+                    Professional assistance with your
+                    travel documentation process.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="about" id="about">
+
+    <div class="container">
+
+        <div class="about-grid">
+
+
+            <div class="about-text">
+
+                <div class="section-label">
+                    ABOUT US
+                </div>
+
+                <h2 class="section-title">
+                    Your journey starts with a conversation.
+                </h2>
+
+                <p>
+                    At SHUBHA TRAVELS, we believe booking travel
+                    should be simple and personal.
+                </p>
+
+                <p>
+                    Instead of making customers navigate complicated
+                    booking systems, our team provides direct support
+                    for flights and travel requirements.
+                </p>
+
+                <p>
+                    Simply call, email or WhatsApp us and tell us
+                    what you need.
+                </p>
+
+            </div>
+
+
+
+            <div class="about-box">
+
+
+                <div class="about-item">
+
+                    <div class="about-check">
+                        ✓
+                    </div>
+
+                    <div>
+                        <strong>
+                            Direct assistance
+                        </strong>
+
+                        <p>
+                            Talk directly with our travel team.
+                        </p>
+                    </div>
+
+                </div>
+
+
+
+                <div class="about-item">
+
+                    <div class="about-check">
+                        ✓
+                    </div>
+
+                    <div>
+                        <strong>
+                            Travel support
+                        </strong>
+
+                        <p>
+                            Assistance for flights and travel services.
+                        </p>
+                    </div>
+
+                </div>
+
+
+
+                <div class="about-item">
+
+                    <div class="about-check">
+                        ✓
+                    </div>
+
+                    <div>
+                        <strong>
+                            Personal service
+                        </strong>
+
+                        <p>
+                            Get help based on your travel requirements.
+                        </p>
+                    </div>
+
+                </div>
+
+
+
+                <div class="about-item">
+
+                    <div class="about-check">
+                        ✓
+                    </div>
+
+                    <div>
+                        <strong>
+                            Easy communication
+                        </strong>
+
+                        <p>
+                            Call, email or WhatsApp whenever you need help.
+                        </p>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     INDUSTRY REFERENCE
+========================= -->
+
+<section class="trust">
+
+    <div class="container">
+
+        <div class="section-label">
+            TRAVEL INDUSTRY
+        </div>
+
+        <h2 class="section-title">
+            Industry references
+        </h2>
+
+        <p class="trust-description">
+            Travel industry information and references associated
+            with the travel ecosystem.
+        </p>
+
+
+        <div class="trust-grid">
+
+
+            <!--
+            ==================================================
+            REPLACE WITH YOUR TOURISM/NIDHI IMAGE
+            ==================================================
+            -->
+
+            <div class="trust-card">
+
+                <img
+                    src="assets/tourism-reference.jpeg"
+                    alt="Tourism industry reference"
+                >
+
+                <h3>
+                    Ministry of Tourism / NIDHI
+                </h3>
+
+                <p>
+                    Tourism industry reference information.
+                </p>
+
+            </div>
+
+
+
+            <!--
+            ==================================================
+            REPLACE WITH YOUR IATA TIDS IMAGE
+            ==================================================
+            -->
+
+            <div class="trust-card">
+
+                <img
+                    src="assets/iata-reference.jpeg"
+                    alt="IATA TIDS travel industry reference"
+                >
+
+                <h3>
+                    IATA TIDS
+                </h3>
+
+                <p>
+                    Travel industry reference information.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     REVIEWS
+========================= -->
+
+<section class="reviews" id="reviews">
+
+    <div class="container">
+
+        <div class="section-label">
+            CUSTOMER REVIEWS
+        </div>
+
+        <h2 class="section-title">
+            What our customers think.
+        </h2>
+
+        <p class="section-description">
+            Real feedback from customers who have experienced
+            our travel services.
+        </p>
+
+
+        <div class="review-grid">
+
+
+            <!-- ANKIT -->
+
+            <div class="review-card">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p class="review-text">
+                    “Shubha Travels helped with our company’s
+                    corporate trip. Everything was on time
+                    and well-organized.”
+                </p>
+
+                <div class="reviewer">
+
+                    <div class="reviewer-avatar">
+                        AA
+                    </div>
+
+                    <div>
+                        <h4>
+                            Ankit Agarwal
+                        </h4>
+
+                        <span>
+                            Customer
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- NEHA -->
+
+            <div class="review-card">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p class="review-text">
+                    “Excellent support team, always available
+                    on call. Got cheapest airfare to London.”
+                </p>
+
+                <div class="reviewer">
+
+                    <div class="reviewer-avatar">
+                        NJ
+                    </div>
+
+                    <div>
+                        <h4>
+                            Neha Joshi
+                        </h4>
+
+                        <span>
+                            Customer
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SAGAR -->
+
+            <div class="review-card">
+
+                <div class="review-card">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p class="review-text">
+                    “Nice Service Best Tour Company....”
+                </p>
+
+                <div class="reviewer">
+
+                    <div class="reviewer-avatar">
+                        SM
+                    </div>
+
+                    <div>
+                        <h4>
+                            Sagar Maurya
+                        </h4>
+
+                        <span>
+                            Customer
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRIYA -->
+
+            <div class="review-card">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p class="review-text">
+                    “Our Dubai holiday package was perfectly
+                    arranged. Hotels and transfers were excellent.”
+                </p>
+
+                <div class="reviewer">
+
+                    <div class="reviewer-avatar">
+                        PS
+                    </div>
+
+                    <div>
+                        <h4>
+                            Priya Sharma
+                        </h4>
+
+                        <span>
+                            Customer
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- IMRAN -->
+
+            <div class="review-card">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p class="review-text">
+                    “Got my visa through them easily.
+                    No stress, very professional service.”
+                </p>
+
+                <div class="reviewer">
+
+                    <div class="reviewer-avatar">
+                        IK
+                    </div>
+
+                    <div>
+                        <h4>
+                            Imran Khan
+                        </h4>
+
+                        <span>
+                            Customer
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section class="contact" id="contact">
+
+    <div class="container">
+
+        <div class="contact-content">
+
+            <div class="section-label">
+                READY TO TRAVEL?
+            </div>
+
+            <h2>
+                Let's plan your journey.
+            </h2>
+
+            <p>
+                Tell us where you want to go and we'll help
+                you with your travel requirements.
+            </p>
+
+
+            <div class="contact-buttons">
+
+
+                <!-- CHANGE PHONE -->
+
+                <a
+                    class="btn btn-primary"
+                    href="tel:+918979117777"
+                >
+                    📞 Call SHUBHA TRAVELS
+                </a>
+
+
+                <!-- CHANGE EMAIL -->
+
+                <a
+                    class="btn btn-light"
+                    href="mailto:shubhatravels@gmail.com"
+                >
+                    ✉️ Send Email
+                </a>
+
+
+                <!-- CHANGE WHATSAPP -->
+
+                <a
+                    class="btn btn-light"
+                    href="https://wa.me/918979117777"
+                    target="_blank"
+                >
+                    💬 WhatsApp Us
+                </a>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-inner">
+
+
+        <!--
+        ==================================================
+        REPLACE LOGO HERE TOO
+        ==================================================
+        -->
+
+        <img
+            class="footer-logo"
+            src="assets/shubha-travels-logo.jpeg"
+            alt="Shubha Travels"
+        >
+
+
+        <div class="footer-text">
+            Travel • Flights • Support
+        </div>
+
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 SHUBHA TRAVELS.
+        All rights reserved.
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================
+     FLOATING WHATSAPP
+========================= -->
+
+<a
+    class="whatsapp"
+    href="https://wa.me/918979117777"
+    target="_blank"
+    aria-label="WhatsApp SHUBHA TRAVELS"
+>
+    💬
+</a>
+
+
+
+</body>
+</html>
